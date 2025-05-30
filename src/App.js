@@ -1,27 +1,33 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import MyFirstFun from './MyFirstFun';
-import MyHtmlTag from './MyHtmlTag';
-import ClassDemo from './ClassDemo';
-import ClassState from './ClassState';
-import ClassDemo1 from './ClassDemo1';
-import ClassCounter from './ClassCounter';
-import FunctionState from './FunctionState';
-import FunctionalProbs from './FunctionalProbs';
-import ConditionalRendering from './ConditionalRendering';
-import MountStageExample from './MountStageExample';
-import ShouldComponetUpdateDemo from './ShouldComponetUpdateDemo';
-import ComponetDidUpdateDemo from './ComponetDidUpdateDemo';
-import { useState } from 'react';
+// import React from 'react';
+// import MyFirstFun from './MyFirstFun';
+// import MyHtmlTag from './MyHtmlTag';
+// import ClassDemo from './ClassDemo';
+// import ClassState from './ClassState';
+// import ClassDemo1 from './ClassDemo1';
+// import ClassCounter from './ClassCounter';
+// import FunctionState from './FunctionState';
+// import FunctionalProbs from './FunctionalProbs';
+// import ConditionalRendering from './ConditionalRendering';
+// import MountStageExample from './MountStageExample';
+// import ShouldComponetUpdateDemo from './ShouldComponetUpdateDemo';
+// import ComponetDidUpdateDemo from './ComponetDidUpdateDemo';
+// import { useState } from 'react';
 // import { isVisible } from '@testing-library/user-event/dist/utils';
-import UnmountDemo from './UnmountDemo';
-import UserEffectDemo from './UserEffectDemo';
-import UseEffectUnmount from './UseEffectUnmount';
-import FormExample from './FormExample';
-import FormExample1 from './FormExample1';
+// import UnmountDemo from './UnmountDemo';
+// import UserEffectDemo from './UserEffectDemo';
+// import UseEffectUnmount from './UseEffectUnmount';
+// import FormExample from './FormExample';
+// import FormExample1 from './FormExample1';
+import Navbar from './Navbar';
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Service from './Service';
 
 function App() {
- let[isVisible,setIsVisible]=useState(true);
+//  let[isVisible,setIsVisible]=useState(true);
   return (
    <div>
     {/* <h1>Hi, My Name is Neha Sapkal</h1> */}
@@ -47,13 +53,26 @@ function App() {
 
     <UserEffectDemo></UserEffectDemo> */}
 
-    {
+    {/* {
     isVisible?<UseEffectUnmount></UseEffectUnmount>:null
     }
     <button  onClick={()=>{setIsVisible(!isVisible)}}>update isvisiable</button>
     <FormExample></FormExample>
 
-    <FormExample1></FormExample1>
+    <FormExample1></FormExample1> */}
+
+
+      
+
+
+  <BrowserRouter>
+  <Routes>
+    <Route path='/home' element={<Home></Home>}></Route>
+    <Route path='/about' element={<About></About>}></Route>
+    <Route path='/service' element={<Service></Service>}></Route>
+  </Routes>
+  <Navbar></Navbar>
+  </BrowserRouter>
    </div>
   );
 }
