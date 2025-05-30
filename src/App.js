@@ -18,6 +18,7 @@ import UnmountDemo from './UnmountDemo';
 import UserEffectDemo from './UserEffectDemo';
 import UseEffectUnmount from './UseEffectUnmount';
 import FormExample from './FormExample';
+import FormExample1 from './FormExample1';
 
 function App() {
  let[isVisible,setIsVisible]=useState(true);
@@ -51,6 +52,8 @@ function App() {
     }
     <button  onClick={()=>{setIsVisible(!isVisible)}}>update isvisiable</button>
     <FormExample></FormExample>
+
+    <FormExample1></FormExample1>
    </div>
   );
 }
