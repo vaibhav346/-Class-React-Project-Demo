@@ -4,9 +4,17 @@
   background-color:aqua
 }
 button{
-  background-color: rgb(4, 32, 42);
+  background-color: brown;
   color: white;
   width: 250px;
   height: 50px;
   font-size: large;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  
+}
+button:hover{
+  background-color: blue;
+  color: black;
 }
