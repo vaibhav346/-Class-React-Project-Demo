@@ -25,6 +25,7 @@ import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Service from './Service';
+import FormValidation from './FormValidation';
 
 function App() {
 //  let[isVisible,setIsVisible]=useState(true);
@@ -74,6 +75,7 @@ function App() {
   </Routes>
   <Navbar></Navbar>
   </BrowserRouter>
+  <FormValidation></FormValidation>
    </div>
   );
 }
