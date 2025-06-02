@@ -70,6 +70,7 @@ function App() {
     <Route path='/home' element={<Home></Home>}></Route>
     <Route path='/about' element={<About></About>}></Route>
     <Route path='/service' element={<Service></Service>}></Route>
+   
   </Routes>
   <Navbar></Navbar>
   </BrowserRouter>
