@@ -26,6 +26,9 @@ import Home from './Home';
 import About from './About';
 import Service from './Service';
 import FormValidation from './FormValidation';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import BootstrapExample from './BootstrapExample';
+import GetUsers from './GetUsers';
 
 function App() {
 //  let[isVisible,setIsVisible]=useState(true);
@@ -76,6 +79,9 @@ function App() {
   <Navbar></Navbar>
   </BrowserRouter>
   <FormValidation></FormValidation>
+  <BootstrapExample></BootstrapExample>
+
+  <GetUsers></GetUsers>
    </div>
   );
 }
