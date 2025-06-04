@@ -29,6 +29,7 @@ import FormValidation from './FormValidation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapExample from './BootstrapExample';
 import GetUsers from './GetUsers';
+import PostData from './PostData';
 
 function App() {
 //  let[isVisible,setIsVisible]=useState(true);
@@ -68,7 +69,7 @@ function App() {
 
       
 
-
+{/* 
   <BrowserRouter>
   <Routes>
     <Route path='/home' element={<Home></Home>}></Route>
@@ -80,8 +81,10 @@ function App() {
   </BrowserRouter>
   <FormValidation></FormValidation>
   <BootstrapExample></BootstrapExample>
+  */}
 
-  <GetUsers></GetUsers>
+  <GetUsers></GetUsers> 
+  <PostData></PostData>
    </div>
   );
 }
