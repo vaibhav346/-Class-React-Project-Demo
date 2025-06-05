@@ -1,11 +1,20 @@
 import React from 'react'
 import axios from 'axios'
 import { useState,useEffect } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+// import { Navigate, useNavigate } from 'react-router-dom'
 export default function GetUsers() {
 
     let[users,setUsers]=useState([])
     // const navigate=useNavigate();
+    let[isupdate,setIsudate]=useState(false)
+    let[name,setName]=useState("")
+    let[email,setEmail]=useState("")
+    let[course,setCourse]=useState("")
+    let[marks,setMarks]=useState("")
+    let[address,setAddress]=useState("")
+    let[contactno,setContactno]=useState("")
+    let[sid,setSid]=useState(0)
+    
 
     useEffect(()=>{
         fechusersdata();
@@ -34,15 +43,35 @@ let deletestud = (sid) => {
     });
 };
 
-let updatestud=(sid)=>{
-  axios.put(`http://localhost:8080/updatebyid/${sid}`)
+let updatestud=(event)=>{
+   event.preventDefault(); 
+  let newstud={name,email,contactno,address,marks,course}
+  axios.put(`http://localhost:8080/updatebyid/${sid}`,newstud)
   .then((response)=>{
-    if(response.data!=null){
-      alert("Go to update data page");
-      fechusersdata();
+    if(response.data){
+      alert("Record Updated Sucessfully");
+
 
     }
   })
+}
+
+let update=(user)=>{
+  setIsudate(!isupdate)
+console.log(user)
+
+  
+  setName(user.name);
+  setEmail(user.email);
+  setCourse(user.course);
+  setAddress(user.address);
+  setMarks(user.marks);
+  setContactno(user.contactno);
+  setSid(user.sid);
+
+
+
+
 }
   return (
 
@@ -72,33 +101,34 @@ let updatestud=(sid)=>{
     <td>{user.marks}</td>
     <td>{user.address}</td>
     <td>{user.contactno}</td>
-    <td className='con'><button className='update' onClick={()=>{updatestud(user.sid)}} >update</button>
-      <button  className='delete' onClick={()=>{deletestud(user.sid)}}>delete</button></td>
+    <td className='con'><button className='update' onClick={()=>{update(user)}} >Update</button>
+      <button  className='delete' onClick={()=>{deletestud(user.sid)}}>Delete</button></td>
     </tr>
     
 )
 }
         </tbody>
       </table>
-
-      <form action="">
+{
+   isupdate? <form onSubmit={updatestud}>
         <h1>Updation Form</h1><br />
-        Enter Name: <input type="text" /><br />
-        Enter Email: <input type="text" /><br />
-        Select Course: <select >
+        Enter Name: <input type="text" value={name}  onChange={(event)=>{setName(event.target.value)}}/><br />
+        Enter Email: <input type="text" value={email} onChange={(event)=>{setEmail(event.target.value)}} /><br />
+        Select Course: <select value={course} onChange={(event)=>{setCourse(event.target.value)}} >
           <option >Select Course</option>
           <option value="Java">Java</option>
           <option value="Spring Boot">Spring boot</option>
           <option value="React Js">React Js</option>
         </select><br />
-        Enter Marks: <input type="text" />
+        Enter Marks: <input type="text" value={marks} onChange={(event)=>{setMarks(event.target.value)}}/>
         <br />
-        Enter Address: <input type="text" />
+        Enter Address: <input type="text" value={address}onChange={(event)=>{setAddress(event.target.value)}} />
         <br />
-        Enter Contactno: <input type="text" />
+        Enter Contactno: <input type="text"value={contactno} onChange={(event)=>{setContactno(event.target.value)}}/>
         <br />
-        <input type="submit" value="Update Student data" className='update' />
-      </form>
+        <input type="submit" value="Update" className='update'/>
+      </form>:null
+      }
     </div>
   )
 }

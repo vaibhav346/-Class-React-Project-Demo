@@ -79,9 +79,10 @@ function App() {
   </Routes>
   <Navbar></Navbar>
   </BrowserRouter>
+   */}
   <FormValidation></FormValidation>
   <BootstrapExample></BootstrapExample>
-  */}
+ 
 
   <GetUsers></GetUsers> 
   <PostData></PostData>
