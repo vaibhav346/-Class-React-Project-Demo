@@ -77,7 +77,7 @@ console.log(user)
 
     <div>
         
-      <table  striped="columns"   className='table table-bordered border-dark '>
+      <table  striped="columns"   className='table table-bordered border-dark ' >
         <thead>
 <tr>
     <th>sid</th>
@@ -110,7 +110,7 @@ console.log(user)
         </tbody>
       </table>
 {
-   isupdate? <form onSubmit={updatestud}>
+   isupdate? <form onSubmit={updatestud} striped="columns"   className='table table-bordered border-dark '>
         <h1>Updation Form</h1><br />
         Enter Name: <input type="text" value={name}  onChange={(event)=>{setName(event.target.value)}}/><br />
         Enter Email: <input type="text" value={email} onChange={(event)=>{setEmail(event.target.value)}} /><br />

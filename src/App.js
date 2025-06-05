@@ -80,12 +80,12 @@ function App() {
   <Navbar></Navbar>
   </BrowserRouter>
    */}
-  <FormValidation></FormValidation>
+  {/* <FormValidation></FormValidation> */}
   <BootstrapExample></BootstrapExample>
  
 
   <GetUsers></GetUsers> 
-  <PostData></PostData>
+  {/* <PostData></PostData> */}
    </div>
   );
 }
